@@ -1,0 +1,23 @@
+﻿@model vidz.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model != null)
+{
+    <div>
+        <h2>@Model.Name</h2>
+        <ul>
+            <li><b><u>Membership type:</u></b> @Model.MembershipType.Name</li>
+            @if (Model.Birthdate != null)
+            {
+                <li><b><u>Birthdate:</u></b> @Model.Birthdate.Value.ToString("d")</li>
+            }
+        </ul>
+    </div>
+}
+else
+{
+    <h2>No Customer with that Id!</h2>
+}
+
